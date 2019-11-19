@@ -63,12 +63,12 @@ class Caja_model extends CI_Model{
             $fila=array(
                 'ID_PRODUCTO'=>$arreglo[$i][0],
                 'ID_FACTURA'=>$id_factura,
-                'MOV_CANT'=>$arreglo[$i][2],
-                'MOV_VALOR'=>$arreglo[$i][3],
-                'MOV_TOTAL'=>$arreglo[$i][4],
+                'MOV_CANT'=>$arreglo[$i][3],
+                'MOV_VALOR'=>$arreglo[$i][4],
+                'MOV_TOTAL'=>$arreglo[$i][5],
                 'ID_EMPRESA'=>$this->session->userdata('id_empresa')
             );
-            $this->restarProductoStock($arreglo[$i][0],intval($arreglo[$i][2]));
+            $this->restarProductoStock($arreglo[$i][0],intval($arreglo[$i][3]));
             $this->db->insert('tb_detalle_fac', $fila);
 
         }
