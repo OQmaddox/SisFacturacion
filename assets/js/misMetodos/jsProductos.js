@@ -191,7 +191,7 @@ function editProductoModel(id_producto) {
             document.getElementById('stockm_producto_edit').value = res.pro_stockm;
             document.getElementById('stock_producto_edit').value = res.por_stock;
             document.getElementById('descripcion_producto_edit').value = res.pro_descripcion;
-            document.getElementById('precio_producto_edit').value = res.pro_precio;
+            document.getElementById('precio_producto_edit_a').value = res.pro_precio;
             $('#check_edit_product').prop('checked', res.pro_estado).change();
 
 
