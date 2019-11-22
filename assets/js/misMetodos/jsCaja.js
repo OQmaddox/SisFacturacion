@@ -30,11 +30,16 @@ function calculoProducto(id_producto) {
         success: function (res) {
 
             canti = document.getElementById("cant_num").value;
-            valor = res.pro_precio
+            valor = res.pro_precio_a
             subtotal = canti * valor;
+            if(subtotal==0){
+                subtotal = 1 * valor;
+                canti=1;
+            }
             //agregar a la tabla;
-            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal)) {
-                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor);
+            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal,res.pro_precio_a)) {
+                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor,
+                    res.pro_precio_a,res.pro_precio_b,res.pro_precio_c);
                 sumarFilas();
             }
             ce();
@@ -45,7 +50,7 @@ function calculoProducto(id_producto) {
 
 }
 
-function agregarFila(id, nombre, cantidad, subtotal, valor) {
+function agregarFila(id, nombre, cantidad, subtotal, valor,precioa,preciob,precioc) {
     var table = document.getElementById("tabla_descripcion");
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
@@ -54,37 +59,76 @@ function agregarFila(id, nombre, cantidad, subtotal, valor) {
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
     var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
     subtotal = parseFloat(subtotal);
     cell1.innerHTML = id;
-    cell2.innerHTML = nombre;
-    cell3.innerHTML = cantidad; 
-    cell4.innerHTML = valor;
-    cell5.innerHTML = subtotal.toFixed(2);
-    cell3.contentEditable=true;
-    cell3.addEventListener('keypress', soloNumeros);
-    cell3.addEventListener('keyup',function(event){
+    cell1.style.display="none";
+    //cell2.innerHTML='A';
+    /**Creacion del combobox */
+    var x = document.createElement("SELECT");
+    x.setAttribute("id", "comboPrecios");
+
+    var a = document.createElement("option");
+    a.setAttribute("value", precioa);
+    var t = document.createTextNode("A");
+    a.appendChild(t);
+
+
+    var b = document.createElement("option");
+    b.setAttribute("value", preciob);
+    var t = document.createTextNode("B");
+    b.appendChild(t);
+
+    var c = document.createElement("option");
+    c.setAttribute("value", precioc);
+    var t = document.createTextNode("C");
+    c.appendChild(t);
+
+    x.addEventListener('change',function(){
         
-        nuevaCantidad=parseInt(this.innerText);
-        subtotal=nuevaCantidad*valor;
-        cell5.innerHTML = subtotal.toFixed(2);
+        valor=parseInt(this.value);
+        subtotal=cell4.innerText*valor;
+        cell6.innerHTML = subtotal.toFixed(2);
+        cell5.innerHTML=valor;
         sumarFilas();
         
     });
-    cell6.innerHTML = '<button class="btn btn-primary btn-sm fas fa-minus" id="ok"  onclick="eliminarProductoLista(this,' + subtotal + ')"/>';
+
+    x.appendChild(a);
+    x.appendChild(b);
+    x.appendChild(c);
+    /** */
+    cell2.appendChild(x);
+    cell3.innerHTML = nombre;
+    cell4.innerHTML = cantidad; 
+    cell5.innerHTML = valor;
+    cell6.innerHTML = subtotal.toFixed(2);
+    cell4.contentEditable=true;
+    cell4.addEventListener('keypress', soloNumeros);
+    cell4.addEventListener('keyup',function(event){
+        
+        nuevaCantidad=parseInt(this.innerText);
+        subtotal=nuevaCantidad*valor;
+        cell6.innerHTML = subtotal.toFixed(2);
+        sumarFilas();
+        
+    });
+    cell7.innerHTML = '<button class="btn btn-primary btn-sm fas fa-minus" id="ok"  onclick="eliminarProductoLista(this,' + subtotal + ')"/>';
     valoresTotales(subtotal);
 
 
 }
 //comprobar repetidos
 
-function verificarRepetidos(id, nombre, cantidad, subtotal) {
+function verificarRepetidos(id, nombre, cantidad, subtotal,pu) {
 
     if (document.getElementById('tabla_descripcion').rows.length > 1) {
         var textos = '';
         for (var i = 1; i < document.getElementById('tabla_descripcion').rows.length; i++) {
-            if (document.getElementById('tabla_descripcion').rows[i].cells[0].innerHTML == id) {
-                val_subtotal = document.getElementById('tabla_descripcion').rows[i].cells[4].innerHTML;
-                val_cant = document.getElementById('tabla_descripcion').rows[i].cells[2].innerHTML;
+            combo=document.getElementById('tabla_descripcion').rows[i].cells[1];
+            if (document.getElementById('tabla_descripcion').rows[i].cells[0].innerHTML == id && combo.children[0].value==pu) {
+                val_subtotal = document.getElementById('tabla_descripcion').rows[i].cells[5].innerHTML;
+                val_cant = document.getElementById('tabla_descripcion').rows[i].cells[3].innerHTML;
                 val_subtotal = parseFloat(val_subtotal);
                 subtotal = parseFloat(subtotal);
 
@@ -92,9 +136,9 @@ function verificarRepetidos(id, nombre, cantidad, subtotal) {
 
                 subtotal = subtotal + val_subtotal;
                 cantidad = parseFloat(cantidad) + parseFloat(val_cant);
-                document.getElementById('tabla_descripcion').rows[i].cells[4].innerHTML = subtotal.toFixed(2);
-                document.getElementById('tabla_descripcion').rows[i].cells[2].innerHTML = cantidad;
-                document.getElementById('tabla_descripcion').rows[i].cells[5].innerHTML = '<button class="btn btn-primary btn-sm fas fa-minus" id="ok"  onclick="eliminarProductoLista(this,' + subtotal + ')"/>';
+                document.getElementById('tabla_descripcion').rows[i].cells[5].innerHTML = subtotal.toFixed(2);
+                document.getElementById('tabla_descripcion').rows[i].cells[3].innerHTML = cantidad;
+                document.getElementById('tabla_descripcion').rows[i].cells[6].innerHTML = '<button class="btn btn-primary btn-sm fas fa-minus" id="ok"  onclick="eliminarProductoLista(this,' + subtotal + ')"/>';
                 sumarFilas();
 
                 return true;
@@ -150,11 +194,16 @@ function agregarCodBarra() {
         success: function (res) {
 
             canti = document.getElementById("cant_num").value;
-            valor = res.pro_precio
+            valor = res.pro_precio_a
             subtotal = canti * valor;
+            if(subtotal==0){
+                subtotal = 1 * valor;
+                canti=1;
+            }
             //agregar a la tabla;
-            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal)) {
-                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor);
+            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal,res.pro_precio_a)) {
+                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor,
+                    res.pro_precio_a,res.pro_precio_b,res.pro_precio_c);
                 sumarFilas();
             }
             ce();
@@ -557,7 +606,7 @@ function sumarFilas(){
     $('#tabla_descripcion').find('tr').each(function (i, el) {
         //Voy incrementando las variables segun la fila ( .eq(0) representa la fila 1 )     
         if(i>0){
-            fil= parseFloat($(this).find('td').eq(4).text());
+            fil= parseFloat($(this).find('td').eq(5).text());
             total=total+fil;
         }
     });

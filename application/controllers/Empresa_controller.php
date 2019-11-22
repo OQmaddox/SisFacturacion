@@ -34,23 +34,35 @@ class Empresa_controller extends CI_Controller {
 			$estado=1;
 			$date = date('Y:m:d H:i:s');
 			
+			if(empty($_FILES['inputGroupFile01']['name'])){
+				echo 'archivo vacio';
+			}else{
+				$img = file_get_contents($_FILES['inputGroupFile01']['tmp_name']);
+				
+			}
+			
 
 			$data = array(
 				'EMP_NOMBRE'=>$empresa,
 				'EMP_ESTADO'=>$estado,
-				'EMP_CREACION'=>$date
+				'EMP_CREACION'=>$date,
+				'EMP_LOGO'=>$img
 			
 			);
-
+			
 			$result = $this->Empresa_model->insert_emp($data);
-			echo ($result);
+			
+			//echo ($result);
 			if ($result){
 				$this->session->set_flashdata('login_error','Se registro correctamente');
-				return redirect('Empresa_controller');
+				//return redirect('Empresa_controller');
+				echo json_encode(true);
 
 			}else{
 				$this->session->set_flashdata('login_error','No se Registro el producto Existe un error qry');
-				return redirect('Empresa_controller');
+				echo json_encode(false);
+
+//				return redirect('Empresa_controller');
 			}
 			
 		}

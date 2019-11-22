@@ -223,8 +223,8 @@
                     <table class="table table-bordered table-striped mb-0" id="tabla_descripcion">
                         <thead>
                             <tr>
-                                <th scope="col" id="id_producto">id</th>
-
+                                <th scope="col" id="id_producto" style="display:none">id</th>
+                                <th scope="col">P</th>
                                 <th scope="col">Descripcion</th>
                                 <th scope="col">Cant</th>
                                 <th scope="col">Pu</th>

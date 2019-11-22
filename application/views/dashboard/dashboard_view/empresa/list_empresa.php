@@ -36,7 +36,16 @@
 							 <td><?php echo $result->ID_EMPRESA ?></td>
  								<td><?php echo $result->EMP_NOMBRE ?></td>
  								<td><?php echo $result->EMP_CREACION ?></td>
- 								<td><?php echo $result->EMP_LOGO ?></td>
+ 								<td>
+								 <?php
+								 	if($result->EMP_LOGO!=null){
+										?>
+					<img src="data:image/png;base64,<?=base64_encode($result->EMP_LOGO)?>" class="img-fluid" alt="Responsive image" width="304" height="236"/>
+
+										<?php
+									 }
+								 ?>
+								 </td>
  							
  								
 

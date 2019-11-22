@@ -115,7 +115,7 @@ class Producto_controller extends CI_Controller {
             $code.='<tr>'; 
             //$code.='<th>'.$row->ID_PRODUCTO.'</th>';
             $code.='<td>'.$row->PRO_NOMBRE.'</td>';
-            $code.='<td>'.$row->PRO_PRECIO.'</td>';
+            $code.='<td>'.$row->PRO_PRECIOA.'</td>';
             $code.='<td>
             <button type="button" class="btn btn-info btn-sm fas fa-edit" onclick="editProductoModel('.$row->ID_PRODUCTO.')"></button>
             <button type="button" class="btn btn-danger btn-sm fas fa-trash" onclick="deleteProducto('.$row->ID_PRODUCTO.')"></button>
@@ -140,7 +140,9 @@ class Producto_controller extends CI_Controller {
             'ID_CATEGORIA' => $data['id_categoria'],
             'PRO_NOMBRE' => $data['nombre_producto'],
             'PRO_CODBARRA' => $data['codbarra_producto'],
-            'PRO_PRECIO' => $data['precio_producto'],
+            'PRO_PRECIOA' => $data['precio_producto_a'],
+            'PRO_PRECIOB' => $data['precio_producto_b'],
+            'PRO_PRECIOC' => $data['precio_producto_c'],
             'PRO_IMPUESTO' => $data['impuesto_producto'],
             'PRO_STOCK' => $data['stock_producto'],
             'PRO_STOCKM' => $data['stockm_producto'],
@@ -192,7 +194,9 @@ class Producto_controller extends CI_Controller {
             $id_categoria=$row->ID_CATEGORIA;
             $pro_nombre=$row->PRO_NOMBRE;
             $pro_codbarra=$row->PRO_CODBARRA;
-            $pro_precio=$row->PRO_PRECIO;
+            $pro_precio_a=$row->PRO_PRECIOA;
+            $pro_precio_b=$row->PRO_PRECIOB;
+            $pro_precio_c=$row->PRO_PRECIOC;
             $pro_impuesto=$row->PRO_IMPUESTO;
             $por_stock=$row->PRO_STOCK;
             $pro_stockm=$row->PRO_STOCKM;
@@ -209,7 +213,9 @@ class Producto_controller extends CI_Controller {
             'id_categoria'=>$id_categoria,
             'pro_nombre'=>$pro_nombre,
             'pro_codbarra'=>$pro_codbarra,
-            'pro_precio'=>$pro_precio,
+            'pro_precio_a'=>$pro_precio_a,
+            'pro_precio_b'=>$pro_precio_b,
+            'pro_precio_c'=>$pro_precio_c,
             'pro_impuesto'=>$pro_impuesto,
             'por_stock'=>$por_stock,
             'pro_stockm'=>$pro_stockm,
@@ -226,7 +232,9 @@ class Producto_controller extends CI_Controller {
             'ID_PRODUCTO'=>$data['id_producto'],
             'PRO_NOMBRE' => $data['nombre_producto'],
             'PRO_CODBARRA' => $data['codbarra_producto'],
-            'PRO_PRECIO' => $data['precio_producto'],
+            'PRO_PRECIOA' => $data['precio_producto_a'],
+            'PRO_PRECIOB' => $data['precio_producto_b'],
+            'PRO_PRECIOC' => $data['precio_producto_c'],
             'PRO_IMPUESTO' => $data['impuesto_producto'],
             'PRO_STOCK' => $data['stock_producto'],
             'PRO_STOCKM' => $data['stockm_producto'],
@@ -300,7 +308,9 @@ class Producto_controller extends CI_Controller {
             $id_categoria=$row->ID_CATEGORIA;
             $pro_nombre=$row->PRO_NOMBRE;
             $pro_codbarra=$row->PRO_CODBARRA;
-            $pro_precio=$row->PRO_PRECIO;
+            $pro_precio_a=$row->PRO_PRECIOA;
+            $pro_precio_b=$row->PRO_PRECIOB;
+            $pro_precio_c=$row->PRO_PRECIOC;
             $pro_impuesto=$row->PRO_IMPUESTO;
             $por_stock=$row->PRO_STOCK;
             $pro_stockm=$row->PRO_STOCKM;
@@ -317,7 +327,9 @@ class Producto_controller extends CI_Controller {
             'id_categoria'=>$id_categoria,
             'pro_nombre'=>$pro_nombre,
             'pro_codbarra'=>$pro_codbarra,
-            'pro_precio'=>$pro_precio,
+            'pro_precio_a'=>$pro_precio_a,
+            'pro_precio_b'=>$pro_precio_b,
+            'pro_precio_c'=>$pro_precio_c,
             'pro_impuesto'=>$pro_impuesto,
             'por_stock'=>$por_stock,
             'pro_stockm'=>$pro_stockm,

@@ -109,10 +109,25 @@
                         
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Precio</span>
+                                <span class="input-group-text">Precio A</span>
                             </div>
-                            <input type="text" class="form-control" id="precio_producto" onKeyPress="return filterFloat(event,this);">
+                            <input type="text" class="form-control" id="precio_producto_a" onKeyPress="return filterFloat(event,this);">
                         </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Precio B</span>
+                            </div>
+                            <input type="text" class="form-control" id="precio_producto_b" onKeyPress="return filterFloat(event,this);">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Precio C</span>
+                            </div>
+                            <input type="text" class="form-control" id="precio_producto_c" onKeyPress="return filterFloat(event,this);">
+                        </div>
+
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Impuesto</span>
@@ -192,9 +207,23 @@
                         
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Precio</span>
+                                <span class="input-group-text">Precio A</span>
                             </div>
-                            <input type="text" class="form-control" id="precio_producto_edit" onKeyPress="return filterFloat(event,this);">
+                            <input type="text" class="form-control" id="precio_producto_edit_a" onKeyPress="return filterFloat(event,this);">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Precio B</span>
+                            </div>
+                            <input type="text" class="form-control" id="precio_producto_edit_b" onKeyPress="return filterFloat(event,this);">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Precio C</span>
+                            </div>
+                            <input type="text" class="form-control" id="precio_producto_edit_c" onKeyPress="return filterFloat(event,this);">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
