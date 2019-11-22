@@ -92,7 +92,7 @@ class Producto_controller extends CI_Controller {
         echo json_encode($data);
     }
     //ver lista de productos
-    public function verTablaProductos($id_categoria){
+    public function verTablaProductos($id_categoria){ 
         
         $data=$this->producto_model->allProductos($id_categoria);
         $code='<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_add_producto">Nuevo producto</button>
@@ -100,19 +100,19 @@ class Producto_controller extends CI_Controller {
   <input class="form-control" id="myInput" type="text" placeholder="Search.." onkeyup="myFunction()">
   <br>
   <div class="table-responsive ">
-    <table class="table table-borderless" id="myTable" >
+    <table class="table table-borderless" id="dataTable" >
         <thead>
             <tr>
-               <!-- <th>#</th> --!>
+               
                 <th>Producto</th>
                 <th>Precio</th>
                 <th>Accion</th>
                 <th style="display: none;">cod</th>
             </tr>
-        </thead>
+        </thead> 
         <tbody id="table_body">';
         foreach($data->result() as $row){
-            $code.='<tr>';
+            $code.='<tr>'; 
             //$code.='<th>'.$row->ID_PRODUCTO.'</th>';
             $code.='<td>'.$row->PRO_NOMBRE.'</td>';
             $code.='<td>'.$row->PRO_PRECIO.'</td>';

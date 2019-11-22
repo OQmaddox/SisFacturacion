@@ -21,6 +21,7 @@ class Dashboard_controller extends CI_Controller {
 	
 	public function index()
 	{
+		if($this->session->userdata('estado')){
 		$fecha=date('Y/m/d');
 		$result1 = $this->report_model->consult_factura_general();		
 		$result2 = $this->report_model->consult_factura_reciente();
@@ -30,7 +31,7 @@ class Dashboard_controller extends CI_Controller {
 		$result7 = $this->Producto_model->mas_vendido();
 		$result8 = $this->Producto_model->menos_vendido();
 		
-		if($this->session->userdata('estado')){
+		
 
 			$this->load->model('User_model');
 			$this->load->view('dashboard/header_layout');

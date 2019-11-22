@@ -270,7 +270,7 @@ $.fn.delayPasteKeyUp = function (fn, ms) {
     });
 };
 //metodo para cobrar
-function cobrar() {
+function cobrar() { 
     var oTable = document.getElementById('tabla_descripcion');
     var total = document.getElementById('cant_total').innerText;
     var subtotal = document.getElementById('cant_subtotal').innerText;

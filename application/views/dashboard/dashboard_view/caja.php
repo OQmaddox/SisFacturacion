@@ -130,7 +130,7 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" onclick="cobrar()">Cobrar</button>
+                        <button type="button" class="btn btn-success" onclick="cobrar();this.value='Registrando..';this.disabled=true;">Cobrar</button> 
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -215,7 +215,7 @@
 
             <div id="verTotalDetalle">
                 <div><i class="fas fa-barcode"></i>
-                    <input class="form-control-sm" type="text" id="cod_barra"></input>
+                    <input class="form-control-sm" type="text" id="cod_barra"></input> 
                     <button type="button" class="btn btn-primary btn-sm fas fa-plus" onclick="agregarCodBarra()"></button>
                 </div>
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">

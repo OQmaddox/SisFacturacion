@@ -4,11 +4,11 @@
 <style>
 body  {
   
-  background-image: url("<?php echo base_url('assets/img/elite.png') ?>");
-	height: 500px; /* You must set a specified height */
-  background-position: left; /* Center the image */
+  background-image: url("<?php echo base_url('assets/img/use.jpg') ?>");
+	height: 700px; /* You must set a specified height */
+  background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
- 
+  background-size: cover;
 }
 </style>
       </nav>

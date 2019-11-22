@@ -261,7 +261,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Categoria: <div id="nom_categoria"></div></h5>
                     
-                    <div id="tabla_producto">      
+                    <div id="tabla_producto">        
                     </div>
                 </div>
             </div>

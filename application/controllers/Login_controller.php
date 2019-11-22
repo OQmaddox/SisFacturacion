@@ -48,6 +48,7 @@ class Login_controller extends CI_Controller {
                             'estado'=>TRUE,
                             'estado_caja'=>false
                         );
+                        
                         $this->session->set_userdata($data);
                         if($res['data']->ID_PERFIL==1){
                             redirect(base_url()."index.php/Dashboard_controller");
