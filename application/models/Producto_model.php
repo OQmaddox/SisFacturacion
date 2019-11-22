@@ -43,7 +43,7 @@ class Producto_model extends CI_Model{
     //obtener todas las sucursales
     public function allProductosPorNombre($nombre){
         
-        $query = $this->db->query("SELECT * FROM tb_producto WHERE ID_EMPRESA=".$this->session->userdata('id_empresa')." AND PRO_NOMBRE LIKE '".$nombre."%'");
+        $query = $this->db->query("SELECT * FROM tb_producto WHERE ID_EMPRESA=".$this->session->userdata('id_empresa')." AND PRO_NOMBRE LIKE '%".$nombre."%'");
         
         return $query;
     }
