@@ -88,13 +88,13 @@ class Producto_model extends CI_Model{
 
     function mas_vendido(){
 
-        $query = $this->db->query("SELECT count(tb_detalle_fac.ID_PRODUCTO) as cantidad,tb_detalle_fac.ID_PRODUCTO,PRO_NOMBRE,PRO_PRECIO,PRO_STOCK FROM tb_detalle_fac, tb_producto WHERE tb_producto.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_detalle_fac.ID_PRODUCTO=tb_producto.ID_PRODUCTO  GROUP BY tb_detalle_fac.ID_PRODUCTO ORDER BY COUNT(tb_detalle_fac.ID_PRODUCTO) DESC LIMIT 5");     
+        $query = $this->db->query("SELECT count(tb_detalle_fac.ID_PRODUCTO) as cantidad,tb_detalle_fac.ID_PRODUCTO,PRO_NOMBRE,PRO_PRECIOA,PRO_STOCK FROM tb_detalle_fac, tb_producto WHERE tb_producto.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_detalle_fac.ID_PRODUCTO=tb_producto.ID_PRODUCTO  GROUP BY tb_detalle_fac.ID_PRODUCTO ORDER BY COUNT(tb_detalle_fac.ID_PRODUCTO) DESC LIMIT 5");     
         return $query->result();
     }
 
     function menos_vendido(){
 
-        $query = $this->db->query("SELECT count(tb_detalle_fac.ID_PRODUCTO) as cantidad,tb_detalle_fac.ID_PRODUCTO,PRO_NOMBRE,PRO_PRECIO,PRO_STOCK FROM tb_detalle_fac, tb_producto WHERE tb_producto.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_detalle_fac.ID_PRODUCTO=tb_producto.ID_PRODUCTO  GROUP BY tb_detalle_fac.ID_PRODUCTO ORDER BY COUNT(tb_detalle_fac.ID_PRODUCTO) ASC LIMIT 5");     
+        $query = $this->db->query("SELECT count(tb_detalle_fac.ID_PRODUCTO) as cantidad,tb_detalle_fac.ID_PRODUCTO,PRO_NOMBRE,PRO_PRECIOA,PRO_STOCK FROM tb_detalle_fac, tb_producto WHERE tb_producto.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_detalle_fac.ID_PRODUCTO=tb_producto.ID_PRODUCTO  GROUP BY tb_detalle_fac.ID_PRODUCTO ORDER BY COUNT(tb_detalle_fac.ID_PRODUCTO) ASC LIMIT 5");     
         return $query->result();
     }
 

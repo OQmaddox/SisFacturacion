@@ -43,7 +43,9 @@ function validation_producto() {
     id_categoria = $("#id_categoria").val();
     nombre_producto = $("#nombre_producto").val();
     codbarra_producto = $("#codbarra_producto").val();
-    precio_producto = $("#precio_producto").val();
+    precio_producto_a = $("#precio_producto_a").val();
+    precio_producto_b = $("#precio_producto_b").val();
+    precio_producto_c = $("#precio_producto_c").val();
     impuesto_producto = $("#impuesto_producto").val();
     stockm_producto = $("#stockm_producto").val();
     stock_producto = $("#stock_producto").val();
@@ -58,8 +60,14 @@ function validation_producto() {
     if (nombre_producto.trim() == '') {
         $('#nombre_producto').focus();
         return false;
-    } else if (precio_producto.trim() == '') {
-        $('#precio_producto').focus();
+    } else if (precio_producto_a.trim() == '') {
+        $('#precio_producto_a').focus();
+        return false;
+    } else if (precio_producto_b.trim() == '') {
+        $('#precio_producto_b').focus();
+        return false;
+    } else if (precio_producto_c.trim() == '') {
+        $('#precio_producto_c').focus();
         return false;
     } else if (impuesto_producto.trim() == '') {
         $('#impuesto_producto').focus();
@@ -79,7 +87,9 @@ function validation_producto() {
                 'id_categoria': id_categoria,
                 'nombre_producto': nombre_producto,
                 'codbarra_producto': codbarra_producto,
-                'precio_producto': precio_producto,
+                'precio_producto_a': precio_producto_a,
+                'precio_producto_b': precio_producto_b,
+                'precio_producto_c': precio_producto_c,
                 'impuesto_producto': impuesto_producto,
                 'stockm_producto': stockm_producto,
                 'stock_producto': stock_producto,
@@ -102,7 +112,7 @@ function validation_producto() {
 
 
             }, error: function () {
-                swal.fire("ERROR!", "You clicked the button!", "error");
+                swal.fire("ERROR!", "insertar producto!", "error");
             }
         });
     }
@@ -191,7 +201,10 @@ function editProductoModel(id_producto) {
             document.getElementById('stockm_producto_edit').value = res.pro_stockm;
             document.getElementById('stock_producto_edit').value = res.por_stock;
             document.getElementById('descripcion_producto_edit').value = res.pro_descripcion;
-            document.getElementById('precio_producto_edit_a').value = res.pro_precio;
+            document.getElementById('precio_producto_edit_a').value = res.pro_precio_a;
+            document.getElementById('precio_producto_edit_b').value = res.pro_precio_b;
+            document.getElementById('precio_producto_edit_c').value = res.pro_precio_c;
+            
             $('#check_edit_product').prop('checked', res.pro_estado).change();
 
 
@@ -199,6 +212,8 @@ function editProductoModel(id_producto) {
             $('#modal_edit_producto').modal('toggle');
             $('#modal_edit_producto').modal('show');
 
+        },error: function(){
+            console.log('error');
         }
     });
 }
@@ -209,7 +224,9 @@ function validation_producto_edit() {
 
     nombre_producto = $("#nombre_producto_edit").val();
     codbarra_producto = $("#codbarra_producto_edit").val();
-    precio_producto = $("#precio_producto_edit").val();
+    precio_producto_a = $("#precio_producto_edit_a").val();
+    precio_producto_b = $("#precio_producto_edit_b").val();
+    precio_producto_c = $("#precio_producto_edit_c").val();
     impuesto_producto = $("#impuesto_producto_edit").val();
     stockm_producto = $("#stockm_producto_edit").val();
     stock_producto = $("#stock_producto_edit").val();
@@ -226,8 +243,14 @@ function validation_producto_edit() {
     if (nombre_producto.trim() == '') {
         $('#nombre_producto_edit').focus();
         return false;
-    } else if (precio_producto.trim() == '') {
-        $('#precio_producto_edit').focus();
+    } else if (precio_producto_a.trim() == '') {
+        $('#precio_producto_edit_a').focus();
+        return false;
+    } else if (precio_producto_b.trim() == '') {
+        $('#precio_producto_edit_b').focus();
+        return false;
+    } else if (precio_producto_c.trim() == '') {
+        $('#precio_producto_edit_c').focus();
         return false;
     } else if (impuesto_producto.trim() == '') {
         $('#impuesto_producto_edit').focus();
@@ -248,7 +271,9 @@ function validation_producto_edit() {
                 'id_categoria': id_categoria,
                 'nombre_producto': nombre_producto,
                 'codbarra_producto': codbarra_producto,
-                'precio_producto': precio_producto,
+                'precio_producto_a': precio_producto_a,
+                'precio_producto_b': precio_producto_b,
+                'precio_producto_c': precio_producto_c,
                 'impuesto_producto': impuesto_producto,
                 'stockm_producto': stockm_producto,
                 'stock_producto': stock_producto,

@@ -30,15 +30,16 @@ function calculoProducto(id_producto) {
         success: function (res) {
 
             canti = document.getElementById("cant_num").value;
-            valor = res.pro_precio
+            valor = res.pro_precio_a
             subtotal = canti * valor;
             if(subtotal==0){
                 subtotal = 1 * valor;
                 canti=1;
             }
             //agregar a la tabla;
-            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal)) {
-                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor);
+            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal,res.pro_precio_a)) {
+                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor,
+                    res.pro_precio_a,res.pro_precio_b,res.pro_precio_c);
                 sumarFilas();
             }
             ce();
@@ -49,7 +50,7 @@ function calculoProducto(id_producto) {
 
 }
 
-function agregarFila(id, nombre, cantidad, subtotal, valor) {
+function agregarFila(id, nombre, cantidad, subtotal, valor,precioa,preciob,precioc) {
     var table = document.getElementById("tabla_descripcion");
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
@@ -68,21 +69,30 @@ function agregarFila(id, nombre, cantidad, subtotal, valor) {
     x.setAttribute("id", "comboPrecios");
 
     var a = document.createElement("option");
-    a.setAttribute("value", "precio1");
+    a.setAttribute("value", precioa);
     var t = document.createTextNode("A");
     a.appendChild(t);
 
 
     var b = document.createElement("option");
-    b.setAttribute("value", "precio2");
+    b.setAttribute("value", preciob);
     var t = document.createTextNode("B");
     b.appendChild(t);
 
     var c = document.createElement("option");
-    c.setAttribute("value", "precio3");
+    c.setAttribute("value", precioc);
     var t = document.createTextNode("C");
     c.appendChild(t);
 
+    x.addEventListener('change',function(){
+        
+        valor=parseInt(this.value);
+        subtotal=cell4.innerText*valor;
+        cell6.innerHTML = subtotal.toFixed(2);
+        cell5.innerHTML=valor;
+        sumarFilas();
+        
+    });
 
     x.appendChild(a);
     x.appendChild(b);
@@ -110,12 +120,13 @@ function agregarFila(id, nombre, cantidad, subtotal, valor) {
 }
 //comprobar repetidos
 
-function verificarRepetidos(id, nombre, cantidad, subtotal) {
+function verificarRepetidos(id, nombre, cantidad, subtotal,pu) {
 
     if (document.getElementById('tabla_descripcion').rows.length > 1) {
         var textos = '';
         for (var i = 1; i < document.getElementById('tabla_descripcion').rows.length; i++) {
-            if (document.getElementById('tabla_descripcion').rows[i].cells[0].innerHTML == id) {
+            combo=document.getElementById('tabla_descripcion').rows[i].cells[1];
+            if (document.getElementById('tabla_descripcion').rows[i].cells[0].innerHTML == id && combo.children[0].value==pu) {
                 val_subtotal = document.getElementById('tabla_descripcion').rows[i].cells[5].innerHTML;
                 val_cant = document.getElementById('tabla_descripcion').rows[i].cells[3].innerHTML;
                 val_subtotal = parseFloat(val_subtotal);
@@ -183,15 +194,16 @@ function agregarCodBarra() {
         success: function (res) {
 
             canti = document.getElementById("cant_num").value;
-            valor = res.pro_precio
+            valor = res.pro_precio_a
             subtotal = canti * valor;
             if(subtotal==0){
                 subtotal = 1 * valor;
                 canti=1;
             }
             //agregar a la tabla;
-            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal)) {
-                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor);
+            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal,res.pro_precio_a)) {
+                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor,
+                    res.pro_precio_a,res.pro_precio_b,res.pro_precio_c);
                 sumarFilas();
             }
             ce();
