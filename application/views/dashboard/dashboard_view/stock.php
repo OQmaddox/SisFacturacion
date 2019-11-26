@@ -12,7 +12,7 @@
           
         </div>
         
-        <!-- Modal body -->
+        <!-- Modal body --> 
         <div class="modal-body">
         <input type="hidden" class="form-control" id="id_producto">
         <input type="hidden" class="form-control" id="id_categoria">
@@ -85,3 +85,29 @@
 </div>
 
 <script src="<?=base_url()?>assets/js/misMetodos/jsStock.js"></script>
+<script>
+    function myFunction() {
+  /*var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+}*/
+$("#myInput").on("keyup", function() {
+ var value = $(this).val().toLowerCase();
+ $("#table_body tr").filter(function() {
+  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+});
+});
+}
+</script>

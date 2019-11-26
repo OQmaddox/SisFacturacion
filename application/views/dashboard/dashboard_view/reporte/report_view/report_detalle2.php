@@ -111,11 +111,11 @@
 		</tr>
 		<tr >			
 			<td colspan="3" style="text-align: right;">IVA 12 %.</td>
-			<td style="text-align: right;"><a href="#" >$ <?php echo ($sum*0.012); ?> </a></td>		
+			<td style="text-align: right;"><a href="#" >$ <?php echo round(($sum*0.012),2); ?> </a></td>		
 		</tr>
 		<tr >			
 			<td colspan="3" style="text-align: right;">SUB TOTAL.</td>
-			<td style="text-align: right;"><a href="#" >$<?php echo ($sum-($sum*0.012)); ?> </a></td>		
+			<td style="text-align: right;"><a href="#" >$<?php echo round(($sum-($sum*0.012)),2); ?> </a></td>		
 		</tr>
 		<tr >
 			<td colspan="3" style="text-align: right;">Total USD.</td>

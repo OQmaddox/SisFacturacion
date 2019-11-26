@@ -48,19 +48,19 @@ tr.mix {border-style: dotted dashed solid double;}
                     
 					<td class="total"><?php echo $result2->MOV_TOTAL ?></td>
                 </tr>
-                <?php $sum=$result2->MOV_TOTAL+$sum?>
+                <?php $sum=$result2->MOV_TOTAL+$sum?> 
 			<?php } ?>  
             <tr class="none">
                     <td class="cantidad"></td>
                     <td class="producto">SUB TOTAL.</td>
                    
-                    <td class="total">$<?php echo ($sum-($sum*0.012)); ?></td>
+                    <td class="total">$<?php echo round(($sum-($sum*0.012)),2); ?></td>
             </tr>
             <tr class="none">
                     <td class="none"></td>
                     <td class="none">IVA 12 %.</td>
                    
-                    <td class="none">$<?php echo ($sum*0.012); ?></td>
+                    <td class="none">$<?php echo round(($sum*0.012),2); ?></td>
             </tr> 
             <tr class="none">
                     <td class="none"></td>
@@ -71,7 +71,7 @@ tr.mix {border-style: dotted dashed solid double;}
             </tbody>
         </table>
         <p class="dotted"><p class="centrado">¡GRACIAS POR SU COMPRA!
-            <br>.com</p></p>
+            <br></p></p>
     </div>
    
 </body>

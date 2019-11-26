@@ -210,7 +210,7 @@
                    
                     <th class="border-0">(#)</th>
                     <th class="border-0">Nombre</th>
-                    <th class="border-0">Precio</th>
+                    <th class="border-0">Precio A</th>
                     <th class="border-0">Stock Actual</th>
                     
                   </tr>
@@ -223,7 +223,7 @@
                       
                       <th scope="row">#<?php echo $i?></th>
                       <td><?php echo $item_mas->PRO_NOMBRE ?></td>
-                      <td>$<?php echo $item_mas->PRO_PRECIO?></td>
+                      <td>$<?php echo $item_mas->PRO_PRECIOA?></td>
                       <td><?php echo $item_mas->PRO_STOCK?></td>
                       
                     </tr>
@@ -275,7 +275,7 @@
                      
                       <th class="border-0">(#)</th>
                       <th class="border-0">Nombre</th>
-                      <th class="border-0">Precio</th>
+                      <th class="border-0">Precio A</th>
                       <th class="border-0">Stock Actual</th>
                       
                     </tr>
@@ -288,7 +288,7 @@
                         
                         <th scope="row">#<?php echo $i?></th>
                         <td><?php echo $item_me->PRO_NOMBRE ?></td>
-                        <td>$<?php echo $item_me->PRO_PRECIO?></td>
+                        <td>$<?php echo $item_me->PRO_PRECIOA?></td> 
                         <td><?php echo $item_me->PRO_STOCK?></td>
                         
                       </tr>

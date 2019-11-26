@@ -9,7 +9,7 @@
         <th>Producto</th>
         <th>Codigo de Barra</th>
         <th>Stock</th>
-        <th>Precio</th>
+        <th>Precio A</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -21,7 +21,7 @@
                 <td><?php echo $result->PRO_NOMBRE ?></td>
                 <td><?php echo $result->PRO_CODBARRA ?></td>
                 <td><?php echo $result->PRO_STOCK ?></td>
-                <td><?php echo $result->PRO_PRECIO ?></td>
+                <td><?php echo $result->PRO_PRECIOA ?></td>
           </tr>
         <?php } ?>
     </tbody>

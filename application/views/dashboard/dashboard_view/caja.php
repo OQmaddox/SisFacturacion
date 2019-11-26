@@ -200,9 +200,9 @@
     <div class="row">
         <div class="col-6">
         <div class="row">
-            Buscar:<input type="text" class="form-control-sm" name="buscar_producto" id="buscar_producto" onkeyup="buscarProductoNombre()">
+            <b>Buscar producto:</b><input type="text" class="form-control-sm" name="buscar_producto" id="buscar_producto" onkeyup="buscarProductoNombre()">
         </div>
-            Categoria
+            <b>Categorías</b>
             <?=$lista_categoria?>
                 <br>
                 <div id="lista_productos">
@@ -214,10 +214,21 @@
             <!--h4 align="center">Detalle de Venta</h4-->
 
             <div id="verTotalDetalle">
-                <div><i class="fas fa-barcode"></i>
-                    <input class="form-control-sm" type="text" id="cod_barra"></input> 
-                    <button type="button" class="btn btn-primary btn-sm fas fa-plus" onclick="agregarCodBarra()"></button>
+            
+                <div>
+                <div class="row">
+                <i class="fas fa-barcode"></i> 
+                    <input class="form-control-sm" type="text" id="cod_barra_s"  autofocus></input>
+                    <input class="form-control-sm" type="text" id="cod_barra" 
+                    style="display:none"
+                     autofocus></input> 
+                    <button id="cod_barra_btn" type="button" class="btn btn-primary btn-sm fas fa-plus" 
+                    style="display:none"
+                    onclick="agregarCodBarra()" ></button>
+                 </div>   
+              <br>
                 </div>
+                <b>Lector de código de barras:</b> <input type="checkbox" id="yourBox" checked/>
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
 
                     <table class="table table-bordered table-striped mb-0" id="tabla_descripcion">
@@ -361,4 +372,39 @@
 $(document).ready(function() {
     consumidorFinal();
 });
+
+document.getElementById('yourBox').onchange = function() {
+    if(this.checked){
+        $('#cod_barra_btn').attr('style', 'display:none;');
+        $('#cod_barra').attr('style', 'display:none;');
+        $('#cod_barra_s').attr('style', 'display:block;');
+
+    }else{
+        $('#cod_barra_btn').attr('style', 'display:block;');
+        $('#cod_barra').attr('style', 'display:block;');
+        $('#cod_barra_s').attr('style', 'display:none;');
+    }
+    
+    
+         
+    
+};
+
+$.fn.delayPasteKeyUp = function(fn, ms)
+ {
+	 var timer = 0;
+	 $(this).on("propertychange input", function()
+	 {
+		 clearTimeout(timer);
+		 timer = setTimeout(fn, ms);
+	 });
+ };
+ 
+ //la utilizamos
+ $(document).ready(function()
+ {
+ 	$("#cod_barra_s").delayPasteKeyUp(function(){
+        agregarCodBarra_scan();
+ }, 200);
+ });
 </script>

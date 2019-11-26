@@ -192,7 +192,6 @@ function agregarCodBarra() {
         url: 'Producto_controller/buscarProductoCodBarra',
         data: { 'cod_barra': cod_barra },
         success: function (res) {
-
             canti = document.getElementById("cant_num").value;
             valor = res.pro_precio_a
             subtotal = canti * valor;
@@ -208,7 +207,7 @@ function agregarCodBarra() {
             }
             ce();
             document.getElementById("cod_barra").value = "";
-
+            document.getElementById("cod_barra_s").value = "";
         },error:function(e){
             
             Swal.fire({
@@ -219,9 +218,44 @@ function agregarCodBarra() {
                 timer: 1500
               })
         }
+        
     });
+}
+function agregarCodBarra_scan() {
+    var cod_barra = document.getElementById("cod_barra_s").value;
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: 'Producto_controller/buscarProductoCodBarra',
+        data: { 'cod_barra': cod_barra },
+        success: function (res) {
+            canti = document.getElementById("cant_num").value;
+            valor = res.pro_precio_a
+            subtotal = canti * valor;
+            if(subtotal==0){
+                subtotal = 1 * valor;
+                canti=1;
+            }
+            //agregar a la tabla;
+            if (!verificarRepetidos(res.id_producto, res.pro_nombre, canti, subtotal,res.pro_precio_a)) {
+                agregarFila(res.id_producto, res.pro_nombre, canti, subtotal, valor,
+                    res.pro_precio_a,res.pro_precio_b,res.pro_precio_c);
+                sumarFilas();
+            }
+            ce();
+            document.getElementById("cod_barra_s").value = "";
 
-
+        },error:function(e){
+            document.getElementById("cod_barra_s").value = "";
+            Swal.fire({
+                position: 'top-end',
+                type: 'info',
+                title: 'El producto no existe',
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
+    });
 }
 //buscar productos por categoria
 function verListaProductos(id_categoria) {

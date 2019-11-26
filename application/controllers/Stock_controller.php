@@ -82,16 +82,18 @@ class Stock_controller extends CI_Controller {
     public function verTablaProductos($id_categoria){
         
         $data=$this->producto_model->allProductos($id_categoria);
-        $code='
+        $code=' <input class="form-control" id="myInput" type="text" placeholder="Buscar .." onkeyup="myFunction()">
+        <br>
         <table class="table table-borderless">
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Stock</th>
                 <th>Accion</th>
+                <th style="display: none;">cod</th>
             </tr>
         </thead>
-        <tbody>';
+        <tbody id="table_body">';
         foreach($data->result() as $row){
             $code.='<tr>';
             
@@ -100,6 +102,7 @@ class Stock_controller extends CI_Controller {
             $code.='<td>
             <button type="button" class="btn btn-info btn-sm fas fa-edit" onclick="editStockModel('.$row->ID_PRODUCTO.')"></button>
             </td>';
+            $code.='<td style="display: none;">'.$row->PRO_CODBARRA.'</td>';
             $code.='</tr>';
             
         }

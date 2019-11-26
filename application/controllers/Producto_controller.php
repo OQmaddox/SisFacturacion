@@ -92,12 +92,12 @@ class Producto_controller extends CI_Controller {
         echo json_encode($data);
     }
     //ver lista de productos
-    public function verTablaProductos($id_categoria){ 
+    public function verTablaProductos($id_categoria){  
         
         $data=$this->producto_model->allProductos($id_categoria);
         $code='<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_add_producto">Nuevo producto</button>
         <div class="shadow p-3 mb-5 bg-white rounded">
-  <input class="form-control" id="myInput" type="text" placeholder="Search.." onkeyup="myFunction()">
+  <input class="form-control" id="myInput" type="text" placeholder="Buscar .." onkeyup="myFunction()">
   <br>
   <div class="table-responsive ">
     <table class="table table-borderless" id="dataTable" >

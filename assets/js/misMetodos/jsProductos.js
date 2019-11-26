@@ -6,7 +6,7 @@ function validation_categoria() {
         $('#categoria_nombre').focus();
         return false;
     } else {
-        $.ajax({
+        $.ajax({ 
             type: 'POST',
             url: 'Producto_controller/guardarCategoria',
             data: {
