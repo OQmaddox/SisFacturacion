@@ -206,7 +206,7 @@ class User_controller extends CI_Controller {
 		
 		$data=$this->input->post();
 
-		$query=$this->USser_model->getCliente($data['cedula']);
+		$query=$this->User_model->getCliente($data['cedula']);
 
 		foreach($query->result() as $row){
 			$dat=array(
@@ -214,7 +214,7 @@ class User_controller extends CI_Controller {
 				'cedula'=>$row->CLI_CEDULA,
 				'direccion'=>$row->CLI_DIRECCION,
 				'telefono'=>$row->CLI_TELEFONO,
-				'puntos'=>$row->CLI_PUNTOS,
+				
 
 
 			);
