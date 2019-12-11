@@ -51,7 +51,7 @@ class Report_model extends CI_Model{
 
    function consult_factura_general(){
 
-        $query = $this->db->query("SELECT SUM(FAC_TOTAL) as FAC_TOTAL2 FROM tb_factura ");     
+        $query = $this->db->query("SELECT SUM(FAC_TOTAL) as FAC_TOTAL2 FROM tb_factura WHERE tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." ");     
         return $query->result();
     }
     function consult_factura_reciente(){
