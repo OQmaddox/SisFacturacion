@@ -33,7 +33,7 @@ function validation_categoria() {
                 
 
             }, error: function () {
-                swal.fire("ERROR!", "EROOR!", "error");
+                swal.fire("ERROR!", "EROOR!", "Validar categoria");
             }
         });
     }
@@ -112,7 +112,7 @@ function validation_producto() {
 
 
             }, error: function () {
-                swal.fire("ERROR!", "insertar producto!", "error");
+                swal.fire("ERROR!", "insertar producto!", "Validar producto");
             }
         });
     }
@@ -296,7 +296,7 @@ function validation_producto_edit() {
 
 
             }, error: function () {
-                swal.fire("ERROR UPDATE!", "You clicked the button!", "error");
+                swal.fire("ERROR UPDATE!", "You clicked the button!", "Validar producto editado");
             }
         });
     }
@@ -353,7 +353,7 @@ function validation_categoria_edit() {
 
 
             }, error: function () {
-                swal.fire("ERROR!", "You clicked the button!", "error");
+                swal.fire("ERROR!", "You clicked the button!", "Validar categoria edit");
             }
         });
     }
@@ -430,7 +430,7 @@ function unicoBarCode(){
            
 
         },error:function(res){
-            alert('error');
+            alert('Error codigo de barra');
         }
     });
 
