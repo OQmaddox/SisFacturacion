@@ -143,7 +143,7 @@ class User_controller extends CI_Controller {
 			$genero = $this->input->post('genero');
 			$celular = $this->input->post('celular');
 			$correo = $this->input->post('correo');
-			//$contraseña = $this->input->post('contraseña');
+			$contraseña = $this->input->post('contraseña');
 			$estado=$this->input->post('est');
 			$date = date('d:m:y h:m:s');
 
@@ -155,7 +155,7 @@ class User_controller extends CI_Controller {
 				'USU_GENERO'=>$genero,
 				'USU_CELULAR'=>$celular,
 				'USU_CORREO'=>$correo,
-				//'USU_PASSWORD'=>md5($contraseña),
+				'USU_PASSWORD'=>md5($contraseña),
 				'USU_ESTADO'=>$estado,
 				'USE_FEC_CRE'=>$date
 			); 
