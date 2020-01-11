@@ -20,11 +20,12 @@ function verProductosStock(id_categoria) {
 
 }
 
-function editStockModel(id_producto){
+function editStockModel(id_producto,base_url){
+    console.log(id_producto);
     $.ajax({
         type: 'POST',
         dataType: 'json',
-        url: 'Producto_controller/buscarProducto',
+        url: base_url+'Producto_controller/buscarProducto',
         data: { 'id_producto': id_producto },
         success: function (res) {
 
@@ -42,8 +43,11 @@ function editStockModel(id_producto){
 
 
 }
+function editStockModel1(id){
+    console.log('sss'+id)
+}
 
-function validationStock() {
+function validationStock(base_url) {
     id_producto = $("#id_producto").val();
     id_categoria = $("#id_categoria").val();
     stock = $("#num_stock").val();
@@ -55,7 +59,7 @@ function validationStock() {
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: 'Stock_controller/editStock',
+            url: base_url+'Stock_controller/editStock',
             data: {
                 'id_producto': id_producto,
                 'stock': stock,
@@ -71,8 +75,9 @@ function validationStock() {
 
                    
                 });
-                $('#tabla_producto').html(res.code);
-                $('#nom_categoria').html(res.nombre_categoria);
+                console.log(res.code);
+                $('#tabal_general_stock').html(res.code);
+                document.getElementById("num_stock").value='';
 
 
             }, error: function () {
