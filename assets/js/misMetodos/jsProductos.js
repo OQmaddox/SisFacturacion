@@ -40,6 +40,7 @@ function validation_categoria() {
 }
 //validar productos
 function validation_producto() {
+
     id_categoria = $("#id_categoria").val();
     nombre_producto = $("#nombre_producto").val();
     codbarra_producto = $("#codbarra_producto").val();
@@ -109,13 +110,26 @@ function validation_producto() {
                 });
                 $('#tabla_producto').html(res.code);
                 $('#nom_categoria').html(res.nombre_categoria);
-
+                clearsaveProducts();
 
             }, error: function () {
                 swal.fire("ERROR!", "insertar producto!", "Validar producto");
             }
         });
     }
+}
+//limpiar variables de ingreso de producto
+function clearsaveProducts(){
+
+    document.getElementById("nombre_producto").value='';
+    document.getElementById("codbarra_producto").value='';
+    document.getElementById("precio_producto_a").value='';
+    document.getElementById("precio_producto_b").value='';
+    document.getElementById("precio_producto_c").value='';
+    document.getElementById("impuesto_producto").value='';
+    document.getElementById("stockm_producto").value='';
+    document.getElementById("stock_producto").value='';
+   
 }
 //ver productos
 function verProductos(id_categoria) {

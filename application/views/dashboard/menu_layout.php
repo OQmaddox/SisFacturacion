@@ -86,8 +86,8 @@ if ($this->session->userdata('id_perfil') == 1) {
         <h6 class="collapse-header">Cierre Diario:</h6>
         <a class="collapse-item" href="<?php echo base_url('index.php/Cierre_controller/list_cierre2'); ?>">Cierre ventas por Usuario</a>
         <a class="collapse-item" href="<?php echo base_url('index.php/Cierre_controller/list_cierre'); ?>">Cierre ventas General</a>
-        <a class="collapse-item" href="<?php echo base_url('Cierre_controller/list_prod_cierre'); ?>">Cierre por Productos</a>
-        <a class="collapse-item" href="<?php echo base_url('Cierre_controller/list_fact_cierre'); ?>">Cierre por Factura</a>
+        <a class="collapse-item" href="<?php echo base_url('Cierre_controller/list_prod_cierre'); ?>">Productos vendidos diarios</a>
+        <a class="collapse-item" href="<?php echo base_url('Cierre_controller/list_fact_cierre'); ?>">Facturas diarias</a>
       </div>
     </div>
   </li>

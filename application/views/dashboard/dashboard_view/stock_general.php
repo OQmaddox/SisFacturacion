@@ -94,7 +94,6 @@
 
     </table>
 </div>
-<?=base_url()?>
 <script src="<?=base_url()?>assets/js/misMetodos/jsStock.js"></script>
 <script>
     $(document).ready(function() {
