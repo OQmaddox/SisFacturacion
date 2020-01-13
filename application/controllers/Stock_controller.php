@@ -156,7 +156,28 @@ class Stock_controller extends CI_Controller
     public function getAllTableProducts(){
         $this->load->model('Producto_model');
         $dat = $this->Producto_model->get_all_productos();
-        $code='';
+        $code='<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="th-sm">Nombre
+
+                </th>
+                <th class="th-sm">Codigo
+
+                </th>
+                <th class="th-sm">Cantidad
+
+                </th>
+                <th class="th-sm">Valor
+
+                </th>
+                <th class="th-sm">
+                    Accion
+                </th>
+
+            </tr>
+        </thead>
+        <tbody id="tabal_general_stock">';
         foreach($dat->result() as $row){
             $code.='<tr>';
             $code.='<td>'.$row->PRO_NOMBRE.'</td>';
@@ -169,6 +190,9 @@ class Stock_controller extends CI_Controller
             $code.='</tr>';
 
         }
+        $code.='</tbody>
+
+        </table>';
         return $code;
 
 

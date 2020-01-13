@@ -76,8 +76,8 @@ function validationStock(base_url) {
                    
                 });
                 console.log(res.code);
-                $('#tabal_general_stock').html(res.code);
-                document.getElementById("num_stock").value='';
+                location.reload(true);
+                //document.getElementById("num_stock").value='';
 
 
             }, error: function () {
