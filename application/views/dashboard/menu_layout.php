@@ -36,6 +36,12 @@ if ($this->session->userdata('id_perfil') == 1) {
       <span>Empleados</span></a>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link" href="<?php echo base_url('index.php/Proveedores_controller/'); ?>">
+      <i class="fas fa-user-check"></i>
+      <span>Proveedores</span></a>
+  </li> 
+
   <!-- Nav Item - Tables -->
   <li class="nav-item">
     <a class="nav-link" href="<?= base_url() ?>index.php/Caja_controller">

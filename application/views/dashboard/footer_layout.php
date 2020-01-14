@@ -134,6 +134,9 @@
 
 <script src="<?= base_url() ?>assets/js/bootstrap-toggle.js"></script>
 
+<script src="<?= base_url() ?>assets/js/misMetodos/jquery.timeago.js"></script>
+
+
 
 
 <script src="<?= base_url() ?>assets/js/popper.min.js"></script>

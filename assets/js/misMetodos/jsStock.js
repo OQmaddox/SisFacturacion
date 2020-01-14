@@ -75,7 +75,6 @@ function validationStock(base_url) {
 
                    
                 });
-                console.log(res.code);
                 location.reload(true);
                 //document.getElementById("num_stock").value='';
 
