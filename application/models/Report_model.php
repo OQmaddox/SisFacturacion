@@ -39,7 +39,7 @@ class Report_model extends CI_Model{
         ->get();
         return $qry->result();
     }
-	function list_detalle($id){
+	function list_detalle($id){ 
         //$qry = $this->db 
        $qry = $this->db->select('tb_detalle_fac.MOV_ID as detalle_id,tb_producto.ID_PRODUCTO as producto_id,PRO_NOMBRE,MOV_CANT,MOV_VALOR,MOV_TOTAL')
         ->from('tb_detalle_fac','tb_producto')
