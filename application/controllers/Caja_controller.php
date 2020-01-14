@@ -58,7 +58,7 @@ class Caja_controller extends CI_Controller {
 			if($row->PRO_STOCKM>$row->PRO_STOCK && $row->PRO_STOCK>0){
 				$code.='<div class="card " style="width: 7rem;">
 				<button class="btn btn-warning o" onclick="calculoProducto('.$row->ID_PRODUCTO.')">
-				'.$row->PRO_PRECIOA.'<br>
+				$'.$row->PRO_PRECIOA.'<br>
 				'.$row->PRO_NOMBRE.'
 				
 				</button>
@@ -66,7 +66,7 @@ class Caja_controller extends CI_Controller {
 			}else if($row->PRO_STOCK<=0){
 				$code.='<div class="card " style="width: 7rem;">
 				<button class="btn btn-danger o" onclick="calculoProducto('.$row->ID_PRODUCTO.')" disabled>
-				'.$row->PRO_PRECIOA.'<br>
+				$'.$row->PRO_PRECIOA.'<br>
 				'.$row->PRO_NOMBRE.'
 				
 				</button>
@@ -74,7 +74,7 @@ class Caja_controller extends CI_Controller {
 			}else{
 				$code.='<div class="card " style="width: 7rem;">
 				<button class="btn btn btn-primary o" onclick="calculoProducto('.$row->ID_PRODUCTO.')">
-				'.$row->PRO_PRECIOA.'<br>
+				$'.$row->PRO_PRECIOA.'<br>
 				'.$row->PRO_NOMBRE.'
 				
 				</button>
@@ -128,7 +128,7 @@ class Caja_controller extends CI_Controller {
 				if($row->PRO_STOCKM>$row->PRO_STOCK && $row->PRO_STOCK>0){
 					$code.='<div class="card " style="width: 7rem;">
 					<button class="btn btn-warning o" onclick="calculoProducto('.$row->ID_PRODUCTO.')">
-					'.$row->PRO_PRECIOA.'<br>
+					$'.$row->PRO_PRECIOA.'<br>
 					'.$row->PRO_NOMBRE.'
 					
 					</button>
@@ -136,7 +136,7 @@ class Caja_controller extends CI_Controller {
 				}else if($row->PRO_STOCK<=0){
 					$code.='<div class="card " style="width: 7rem;">
 					<button class="btn btn-danger o" onclick="calculoProducto('.$row->ID_PRODUCTO.')" disabled>
-					'.$row->PRO_PRECIOA.'<br>
+					$'.$row->PRO_PRECIOA.'<br>
 					'.$row->PRO_NOMBRE.'
 					
 					</button>
@@ -144,7 +144,7 @@ class Caja_controller extends CI_Controller {
 				}else{
 					$code.='<div class="card " style="width: 7rem;">
 					<button class="btn btn btn-primary o" onclick="calculoProducto('.$row->ID_PRODUCTO.')">
-					'.$row->PRO_PRECIOA.'<br>
+					$'.$row->PRO_PRECIOA.'<br>
 					'.$row->PRO_NOMBRE.'
 					
 					</button>
@@ -323,7 +323,7 @@ class Caja_controller extends CI_Controller {
 				if($row->PRO_STOCKM>$row->PRO_STOCK && $row->PRO_STOCK>0){
 					$code.='<div class="card " style="width: 7rem;">
 					<button class="btn btn-warning o" onclick="calculoProducto('.$row->ID_PRODUCTO.')">
-					'.$row->PRO_PRECIOA.'<br>
+					$'.$row->PRO_PRECIOA.'<br>
 					'.$row->PRO_NOMBRE.'
 					
 					</button>
@@ -331,7 +331,7 @@ class Caja_controller extends CI_Controller {
 				}else if($row->PRO_STOCK<=0){
 					$code.='<div class="card " style="width: 7rem;">
 					<button class="btn btn-danger o" onclick="calculoProducto('.$row->ID_PRODUCTO.')" disabled>
-					'.$row->PRO_PRECIOA.'<br>
+					$'.$row->PRO_PRECIOA.'<br>
 					'.$row->PRO_NOMBRE.'
 					
 					</button>
@@ -339,7 +339,7 @@ class Caja_controller extends CI_Controller {
 				}else{
 					$code.='<div class="card " style="width: 7rem;">
 					<button class="btn btn btn-primary o" onclick="calculoProducto('.$row->ID_PRODUCTO.')">
-					'.$row->PRO_PRECIOA.'<br>
+					$'.$row->PRO_PRECIOA.'<br>
 					'.$row->PRO_NOMBRE.'
 					
 					</button>

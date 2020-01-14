@@ -88,11 +88,11 @@
                             <div class="row">
 
                                 <div class="col">
-                                    <input type="text" class="form-control form-control-sm" id="nombre_cliente" placeholder="nombre">
+                                    <input type="text" class="form-control form-control-sm" id="nombre_cliente" placeholder="nombre del cliente">
                                 </div>
 
                                 <div class="col">
-                                <input type="text" class="form-control form-control-sm" id="cedula_cliente" placeholder="cedula" onBlur="buscarCliente(this)" onKeyPress="return soloNumeros(event)">
+                                <input type="text" class="form-control form-control-sm" id="cedula_cliente" placeholder="cedula del cliente" onBlur="buscarCliente(this)" onKeyPress="return soloNumeros(event)">
                                 </div>
                             </div>
 
@@ -101,7 +101,7 @@
                             <label for="sucursal">Direccion</label>
                             <input type="text" class="form-control form-control-sm" id="direccion_cliente" placeholder="direccion">
                             <label for="sucursal">Telefono</label>
-                            <input type="text" class="form-control form-control-sm" id="telefono_cliente" placeholder="telefono" onKeyPress="return soloNumeros(event)">
+                            <input type="text" class="form-control form-control-sm" id="telefono_cliente" placeholder="telefono celular" onKeyPress="return soloNumeros(event)">
 
                         </div>
                         <div class="form-group">
@@ -172,13 +172,13 @@
                     <div class="row">
                         <div class="col">
                         Descripcion
-                            <textarea class="form-control" id="descripcion_caja" rows="3" placeholder="Descripcion"></textarea>
+                            <textarea class="form-control" id="descripcion_caja" rows="3" placeholder="Descripcion breve del motivo!"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                         Monto
-                            <input type="text" class="form-control form-control-sm" id="monto_caja" placeholder="Monto" onKeyPress="return filterFloat(event,this);">
+                            <input type="text" class="form-control form-control-sm" id="monto_caja" placeholder="$0.0" onKeyPress="return filterFloat(event,this);">
                         </div>
                     </div>
 
@@ -200,7 +200,7 @@
     <div class="row">
         <div class="col-6">
         <div class="row">
-            <b>Buscar producto:</b><input type="text" class="form-control-sm" name="buscar_producto" id="buscar_producto" onkeyup="buscarProductoNombre()">
+            <b>Buscar producto:</b><input type="text" class="form-control-sm" name="buscar_producto" id="buscar_producto" placeholder="Nombre del producto" onkeyup="buscarProductoNombre()">
         </div>
             <b>Categorías</b>
             <?=$lista_categoria?>
@@ -218,8 +218,8 @@
                 <div>
                 <div class="row">
                 <i class="fas fa-barcode"></i> 
-                    <input class="form-control-sm" type="text" id="cod_barra_s"  autofocus></input>
-                    <input class="form-control-sm" type="text" id="cod_barra" 
+                    <input class="form-control-sm" type="text" id="cod_barra_s"  autofocus placeholder="Código de barras"></input>
+                    <input class="form-control-sm" type="text" id="cod_barra" placeholder="Código de barras" 
                     style="display:none"
                      autofocus></input> 
                     <button id="cod_barra_btn" type="button" class="btn btn-primary btn-sm fas fa-plus" 

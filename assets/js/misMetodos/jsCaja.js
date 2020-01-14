@@ -273,7 +273,7 @@ function verListaProductos(id_categoria) {
 
 
             }, error: function () {
-                swal.fire("ERROR!", "", "error");
+                swal.fire("ERROR!", "", "Ver lista de productos");
             }
         });
 
@@ -291,7 +291,7 @@ function verListaProductos(id_categoria) {
 
 
             }, error: function () {
-                swal.fire("ERROR!", "", "error");
+                swal.fire("ERROR!", "", "Ver lista de productos");
             }
         });
     }
@@ -446,7 +446,7 @@ function cobrar() {
 
 
             }, error: function () {
-                swal.fire("ERROR!", "", "error");
+                swal.fire("ERROR!", "", "Corbrar los productos");
             }
         });
 
@@ -521,7 +521,7 @@ function abrirGaveta() {
 
 
             }, error: function () {
-                swal.fire("ERROR!", "", "error");
+                swal.fire("ERROR!", "", "Abrir gabeta");
             }
         });
     }
@@ -546,7 +546,7 @@ function abrirCajaView() {
 
 
         }, error: function () {
-            swal.fire("ERROR Caja!", "", "error");
+            swal.fire("ERROR Caja!", "", "Abrir caja");
         }
     });
 
@@ -569,7 +569,7 @@ function validarCierreCaja() {
                 window.location.href = "Dashboard_controller";
 
             }, error: function () {
-                swal.fire("ERROR Caja!", "", "error");
+                swal.fire("ERROR Caja!", "", "Validar cierre de caja");
             }
         });
     }
@@ -625,7 +625,7 @@ function validarCierreCaja_2() {
 
             }, error: function () {
                 
-                swal.fire("ERROR Cierre caja!", "", "error");
+                swal.fire("ERROR Cierre caja!", "", "validar Cierre de caja 2");
             }
         });
     }
@@ -668,7 +668,7 @@ function buscarProductoNombre(){
 
 
             }, error: function () {
-                swal.fire("ERROR!", "", "error");
+                swal.fire("ERROR!", "", "Buscar producto por nombre ");
             }
         });
 
@@ -686,7 +686,7 @@ function buscarProductoNombre(){
 
 
             }, error: function () {
-                swal.fire("ERROR!", "", "error");
+                swal.fire("ERROR!", "", "Buscar producto por nombre");
             }
         });
     }

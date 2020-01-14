@@ -57,7 +57,7 @@ class Report_model extends CI_Model{
     function consult_factura_reciente(){
 
 
-        $query = $this->db->query("SELECT ID_FACTURA,USU_NOMBRE,FAC_FECHA,FAC_SUBTOTAL,FAC_TOTAL FROM tb_factura, tb_usuario WHERE tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_factura.ID_USUARIO = tb_usuario.ID_USUARIO group by tb_factura.FAC_FECHA DESC LIMIT 6");     
+        $query = $this->db->query("SELECT ID_FACTURA,USU_NOMBRE,FAC_FECHA,FAC_SUBTOTAL,FAC_TOTAL FROM tb_factura, tb_usuario WHERE tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_factura.ID_USUARIO = tb_usuario.ID_USUARIO order by tb_factura.FAC_FECHA DESC LIMIT 6");     
 
         return $query->result();
     }
@@ -65,6 +65,17 @@ class Report_model extends CI_Model{
 
         $query = $this->db->query("SELECT * FROM tb_factura, tb_cliente WHERE tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_cliente.ID_CLIENTE= tb_factura.ID_CLIENTE AND tb_factura.ID_FACTURA ='".$id_fac."'");     
         return $query->row();
+    }
+    //consulta de valores semanales
+    function getValueWeek($fechaI,$fechaF){
+        $query= $this->db->query("SELECT sum(FAC_TOTAL) as total FROM tb_factura where tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND FAC_FECHA BETWEEN '$fechaI'  and '$fechaF'");
+        return $query->result();
+    }
+    //consulta de valores mensuales
+
+    function getValueMonth($year){
+        $query= $this->db->query("SELECT FAC_FECHA,SUM(FAC_TOTAL) as TOTAL FROM tb_factura WHERE tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND YEAR(FAC_FECHA)=$year GROUP by MONTH(FAC_FECHA)");
+        return $query->result();
     }
 
 }
