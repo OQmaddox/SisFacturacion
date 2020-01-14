@@ -4,7 +4,7 @@
 <style>
 body  {
   
- 
+	background-image: url("<?php echo base_url()?>assets/img/tecno.jpg");
 	height: 700px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -20,7 +20,7 @@ body  {
     	<div class="col-md-4 col-md-offset-4">
     	    		<div class="panel panel-primary">
 			  	<div class="panel-heading">
-			    	<h3 class="panel-title">Iniciar Sesion</h3>
+			    	<h3 class="panel-title">Iniciar Sesión</h3>
 			 	</div>
 			  	<div class="panel-body">
 				  	<form action="<?php echo base_url();?>index.php/Login_controller/validation" method="POST">
