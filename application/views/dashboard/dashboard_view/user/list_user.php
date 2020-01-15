@@ -74,7 +74,21 @@
 								</td>
 								<td><?php echo $result->USE_FEC_CRE ?></td>
 								<td>
-									<time class="timeago" datetime="<?php echo $result->USE_FEC_CRE ?>"></time>
+								
+									<?php 
+									$datetime1 = date_create(date('Y-m-d' , strtotime($result->USE_FEC_CRE)));
+									$datetime2 = date_create(date( 'Y-m-d' ));
+									$interval = date_diff($datetime1, $datetime2);
+									$tiempo=array();
+									foreach ($interval as $valor){
+										$tiempo[]=$valor;
+									}
+									echo $tiempo[2] . " Dias "  ;
+									echo $tiempo[1] . " Meses "  ;
+									echo $tiempo[0] . " Años "  ;
+									
+									?>
+
 
 								</td>
 
