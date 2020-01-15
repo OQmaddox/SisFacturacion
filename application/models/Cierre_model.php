@@ -27,7 +27,7 @@ class Cierre_model extends CI_Model{
     //Consulta stock por producto
     function consult_prod($fecha){
 
-        $query = $this->db->query("SELECT SUM(tb_detalle_fac.MOV_CANT) AS CANT,tb_producto.PRO_NOMBRE as PROD_NOM FROM tb_detalle_fac,tb_factura,tb_producto WHERE tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_factura.ID_FACTURA = tb_detalle_fac.ID_FACTURA and tb_producto.ID_PRODUCTO=tb_detalle_fac.ID_PRODUCTO AND DATE(tb_factura.FAC_FECHA)= '".$fecha."' order by tb_producto.PRO_NOMBRE");     
+        $query = $this->db->query("SELECT SUM(tb_detalle_fac.MOV_CANT) AS CANT,tb_producto.PRO_NOMBRE as PROD_NOM FROM tb_detalle_fac,tb_factura,tb_producto WHERE tb_factura.ID_EMPRESA=".$this->session->userdata('id_empresa')." AND tb_factura.ID_FACTURA = tb_detalle_fac.ID_FACTURA and tb_producto.ID_PRODUCTO=tb_detalle_fac.ID_PRODUCTO AND DATE(tb_factura.FAC_FECHA)= '".$fecha."' group by tb_producto.PRO_NOMBRE");     
         return $query->result();
     }
     function list_facturas($fecha){
@@ -38,6 +38,7 @@ class Cierre_model extends CI_Model{
         ->where('tb_factura.ID_EMPRESA',$this->session->userdata('id_empresa'))
         ->join('tb_cliente','tb_factura.ID_CLIENTE = tb_cliente.ID_CLIENTE','left')
         ->join('tb_usuario','tb_factura.ID_USUARIO = tb_usuario.ID_USUARIO','left')
+        ->order_by('FAC_FECHA', 'DESC')
         ->get();
         return $qry->result();
     }

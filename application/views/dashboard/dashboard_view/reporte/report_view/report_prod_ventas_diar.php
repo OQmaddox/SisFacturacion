@@ -32,6 +32,7 @@ th, td {
                                                 </tr>
                                             </thead>
                                             <tbody>
+
                                                 <?php $sum=0;
                                                          foreach ($data1 as $result1){
                                                              $sum=$result1->CANT+$sum;
