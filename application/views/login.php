@@ -4,11 +4,14 @@
 <style>
 body  {
   
-	background-image: url("<?php echo base_url()?>assets/img/tecno.jpg");
-	height: 700px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
+	background: rgba(73,155,234,1);
+background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 6%, rgba(139,177,217,1) 32%, rgba(32,124,229,1) 71%, rgba(32,124,229,1) 86%, rgba(32,124,229,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(6%, rgba(73,155,234,1)), color-stop(32%, rgba(139,177,217,1)), color-stop(71%, rgba(32,124,229,1)), color-stop(86%, rgba(32,124,229,1)), color-stop(100%, rgba(32,124,229,1)));
+background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 6%, rgba(139,177,217,1) 32%, rgba(32,124,229,1) 71%, rgba(32,124,229,1) 86%, rgba(32,124,229,1) 100%);
+background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 6%, rgba(139,177,217,1) 32%, rgba(32,124,229,1) 71%, rgba(32,124,229,1) 86%, rgba(32,124,229,1) 100%);
+background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 6%, rgba(139,177,217,1) 32%, rgba(32,124,229,1) 71%, rgba(32,124,229,1) 86%, rgba(32,124,229,1) 100%);
+background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 6%, rgba(139,177,217,1) 32%, rgba(32,124,229,1) 71%, rgba(32,124,229,1) 86%, rgba(32,124,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
 }
 </style>
       </nav>

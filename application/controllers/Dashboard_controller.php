@@ -116,7 +116,10 @@ class Dashboard_controller extends CI_Controller
 			if ($res !== null) {
 				$val = $res + 0;
 				array_push($data, $val);
+			}else{
+				array_push($data, null);
 			}
+			
 		}
 		# A la fecha recibida, le sumamos el dia de la semana menos siete y obtendremos el domingo
 		$domingo = date("Y-m-d", mktime(0, 0, 0, $month, $day + (7 - $diaSemana), $year));
@@ -127,6 +130,8 @@ class Dashboard_controller extends CI_Controller
 		if ($res !== null) {
 			$val = $res + 0;
 			array_push($data, $val);
+		}else{
+			array_push($data, null);
 		}
 		echo json_encode($data);
 	}

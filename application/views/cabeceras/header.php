@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Maddox" content="">
 
-    <title>Sistema de Facturación Touch Speed</title>
+    <title>Sistema de Facturación Negow</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?=base_url()?>assets/res/bootstrap3/css/bootstrap.css" rel="stylesheet">
@@ -31,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./">Sistema Facturación Touch Speed<sup></sup> </a>
+      <a class="navbar-brand" href="./">Sistema de Facturación Negow<sup></sup> </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
