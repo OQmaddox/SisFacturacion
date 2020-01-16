@@ -86,7 +86,7 @@ function agregarFila(id, nombre, cantidad, subtotal, valor,precioa,preciob,preci
 
     x.addEventListener('change',function(){
         
-        valor=parseInt(this.value);
+        valor=parseFloat(this.value);
         subtotal=cell4.innerText*valor;
         cell6.innerHTML = subtotal.toFixed(2);
         cell5.innerHTML=valor;

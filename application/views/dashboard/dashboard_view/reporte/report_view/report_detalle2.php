@@ -15,8 +15,7 @@
 			<div class="row">
             
 		<div class="col-xs-6">
-			<h1><a href="#"><img alt="" src="<?php echo base_url('assets/img/elite.png');?>" with="150px" height="180px"/></a></h1>
-		</div>
+ 		</div>
 		<div class="col-xs-6 text-right">
 							<div class="panel panel-default">
 							<div class="panel-heading">
@@ -26,7 +25,7 @@
 									</h4>
 							</div>
 							<div class="panel-body">
-								<h4>FACTURA : 
+								<h4>Nota de venta : 
 										<a href="#"><?php echo $data1->ID_FACTURA?></a>
 								</h4>
 							</div>
@@ -36,7 +35,7 @@
 			<hr />
  
 			
-				<h1 style="text-align: center;">FACTURA</h1> 
+				<h1 style="text-align: center;">NOTA DE VENTA</h1> 
 			
 				<div class="row">
 					<div class="col-xs-12">

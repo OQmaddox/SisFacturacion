@@ -46,7 +46,12 @@ class Empresa_controller extends CI_Controller {
 				'EMP_NOMBRE'=>$empresa,
 				'EMP_ESTADO'=>$estado,
 				'EMP_CREACION'=>$date,
-				'EMP_LOGO'=>$img
+				'EMP_LOGO'=>$img,
+				'EMP_DIRECCION'=>$this->input->post('direccion'),
+				'EMP_RUC'=>$this->input->post('ruc'),
+				'EMP_TELEFONO'=>$this->input->post('telefono'),
+				'EMP_CIUDAD'=>$this->input->post('ciudad'),
+				'EMP_CORREO'=>$this->input->post('correo')
 			
 			);
 			
