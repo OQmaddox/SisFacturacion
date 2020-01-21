@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <!-- The Modal -->
 
     <div class="modal fade" id="modal_add_categoria">

@@ -35,7 +35,7 @@ class Stock_controller extends CI_Controller
             redirect(base_url());
         }
     }
-    public function tablaStock()
+    public function tablaStock() 
     {
         if ($this->session->userdata('estado')) {
             $this->load->model('User_model');

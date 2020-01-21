@@ -93,8 +93,26 @@ class Report_controller extends CI_Controller {
 			redirect(base_url());
 		}
 
+	}
+	
+	function pdf_productos(){
+    	$result = $this->report_model->list_stock();
+    	if($this->session->userdata('estado')){
+			$this->load->view('dashboard/header_layout');
+
+			$this->load->view('dashboard/menu_layout',$this->User_model->getDataUser());
+
+			//Reporte
+		
+			$this->load->view('dashboard/dashboard_view/reporte/report_view/pdf_codigos',['data1'=>$result]);
+		
+			//reporte
+			$this->load->view('dashboard/footer_layout');
+		}else{
+			redirect(base_url());
+		}
+
     }
-    
 
 
 

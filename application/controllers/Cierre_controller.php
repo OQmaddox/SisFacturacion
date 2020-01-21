@@ -58,7 +58,7 @@ class Cierre_controller extends CI_Controller {
             $this->load->view('dashboard/menu_layout',$this->User_model->getDataUser());
 
             //Reporte
-
+            $this->session->set_tempdata('fecha',$fe,3000);
             $this->load->view('dashboard/dashboard_view/reporte/report_view/report_ventas_diar',['data1'=>$result1,'data2'=>$result2,'data3'=>$result3]);
             
             //reporte
@@ -187,6 +187,30 @@ class Cierre_controller extends CI_Controller {
 
     }
 
+    function pdf_report(){
+        $fe=$this->session->tempdata('fecha');
+        $nombre=$this->session->userdata('usu_nombre');
+        $apellido=$this->session->userdata('usu_apellido');
+        $fechah=date(DATE_RFC2822);
+        //echo "<pre>";print_r($result);die;
+     
+
+        $result1 = $this->cierre_model->consult_caja($fe);
+        $result2 = $this->cierre_model->consult_factura($fe);
+        $result3 = $this->cierre_model->consult_accion_caja($fe);
+        $result4 = $this->cierre_model->consult_prod($fe);
+        $result5 = $this->cierre_model->list_facturas($fe);
+        if($this->session->userdata('estado')){
+
+            $this->load->view('dashboard/dashboard_view/reporte/report_view/pdf_report_general',['data1'=>$result1,'data2'=>$result2,'data3'=>$result3,'data4'=>$result4,'data5'=>$result5,'fecha'=>$fe,'nombre'=>$nombre,'apellido'=>$apellido,'fechah'=>$fechah]);
+
+        }else{
+            redirect(base_url());
+        }
+       
+    }
+
+  
 
     
     

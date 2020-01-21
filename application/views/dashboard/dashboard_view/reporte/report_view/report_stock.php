@@ -1,4 +1,8 @@
 <div class="container-fluid">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h3>Listado de Productos</h3> 
+                        
+                        </div>
 <div class="card-body">
               <div class="table-responsive">
    
@@ -10,6 +14,8 @@
         <th>Codigo de Barra</th>
         <th>Stock</th>
         <th>Precio A</th>
+        <th>Precio B</th>
+        <th>Precio C</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -22,6 +28,8 @@
                 <td><?php echo $result->PRO_CODBARRA ?></td>
                 <td><?php echo $result->PRO_STOCK ?></td>
                 <td><?php echo $result->PRO_PRECIOA ?></td>
+                <td><?php echo $result->PRO_PRECIOB ?></td>
+                <td><?php echo $result->PRO_PRECIOC ?></td>
           </tr>
         <?php } ?>
     </tbody>

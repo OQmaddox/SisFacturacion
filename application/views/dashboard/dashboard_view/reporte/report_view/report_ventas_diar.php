@@ -14,8 +14,10 @@ th, td {
 
 
                     <div class="col-xl-22 col-lg-12 col-md-12 ">
-                        <div class="section-block">
-                        <h3>Cierre de caja Diario</h3>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h3>Cierre de Caja Diario <?php echo $this->session->tempdata('fecha');?></h3> 
+                        
+                        <a href="<?= base_url() ?>index.php/Cierre_controller/pdf_report" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
                     </div>
                     <div class="shadow p-3 mb-9 bg-white rounded"> 

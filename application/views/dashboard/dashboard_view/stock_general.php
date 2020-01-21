@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="modal fade" id="modal_edit_stock">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -63,14 +63,15 @@
                     <th class="th-sm">Codigo
 
                     </th>
-                    <th class="th-sm">Cantidad
-
-                    </th>
                     <th class="th-sm">Valor
 
                     </th>
+                    <th class="th-sm">Cantidad
+
+                    </th>
+                    
                     <th class="th-sm">
-                        Accion
+                        Editar Stock
                     </th>
 
                 </tr>
@@ -82,8 +83,9 @@
                     <tr>
                         <td><?= $pro->PRO_NOMBRE ?></td>
                         <td><?= $pro->PRO_CODBARRA ?></td>
-                        <td id='<?=$pro->ID_PRODUCTO?>'><?= $pro->PRO_STOCK ?></td>
                         <td>$<?= $pro->PRO_PRECIOA ?></td>
+                        <td id='<?=$pro->ID_PRODUCTO?>'><?= $pro->PRO_STOCK ?></td>
+                        
                         <td>
                             <button type="button" class="btn btn-info btn-sm fas fa-edit" onclick="editStockModel(<?= $pro->ID_PRODUCTO ?>,'<?= base_url() ?>')"></button>
                         </td>

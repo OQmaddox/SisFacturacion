@@ -78,7 +78,7 @@
           <h1 class="h3 mb-0 text-gray-800"><?php echo $this->session->userdata('emp_nombre'); ?></h1>
           <h2>Bienvenido <?php echo $this->session->userdata('usu_nombre'); ?> <?php echo $this->session->userdata('usu_apellido'); ?></h2>
 
-          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Dashboard</a> 
         </div>
 
         <!-- Content Row -->
