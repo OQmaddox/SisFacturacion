@@ -14,9 +14,9 @@ th, td {
 
 
                     <div class="col-xl-22 col-lg-12 col-md-12 ">
-                        <div class="section-block">
-                        <h3>Cierre de caja Diario Por Usuario</h3>
-                    </div>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h3>Cierre de Caja Diario Por Usuario</h3>
+                           </div>
                     </div>
                     <div class="shadow p-3 mb-9 bg-white rounded"> 
                                 

@@ -328,10 +328,10 @@ function consumidorDatos() {
     document.getElementById("telefono_cliente").value = '';
     document.getElementById("direccion_cliente").value = '';
 
-    $("#nombre_cliente").prop("disabled", false);
-    $("#cedula_cliente").prop("disabled", false);
-    $("#telefono_cliente").prop("disabled", false);
-    $("#direccion_cliente").prop("disabled", false);
+    //$("#nombre_cliente").prop("disabled", false);
+    //$("#cedula_cliente").prop("disabled", false);
+    //$("#telefono_cliente").prop("disabled", false);
+    //$("#direccion_cliente").prop("disabled", false);
 }
 
 //calculo del vuelto

@@ -50,34 +50,20 @@ if ($this->session->userdata('id_perfil') == 1) {
   </li>
 
   <li class="nav-item">
-    <a a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePro" aria-expanded="true" aria-controls="collapseTwo">
+    <a class="nav-link" href="<?= base_url() ?>index.php/Producto_controller">
     <i class="fas fa-balance-scale"></i>
-      <span>Producto</span>
-    </a>
-    <div id="collapsePro" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Gestión del productos</h6>
-        <a class="collapse-item" href="<?= base_url() ?>index.php/Producto_controller">Ingreso de productos</a>
-        <a class="collapse-item" >Tabla de productos</a>
-      </div>
-    </div>
-  </li>
+      <span>Productos</span></a>
+  </li> 
+
+
 
   <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInventario" aria-expanded="true" aria-controls="collapseTwo">
-  <i class="fas fa-barcode"></i>
-      <span>Inventario</span></a>  
-</a>
-  <div id="collapseInventario" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Cierre Diario:</h6>
-        <a class="collapse-item" href="<?=base_url()?>index.php/Stock_controller/tablaStock">Stock tabla general</a>
-        
-      </div>
-    </div>
-    
-      
+    <a class="nav-link" href="<?=base_url()?>index.php/Stock_controller/tablaStock">
+    <i class="fas fa-barcode"></i>
+      <span>Inventario</span></a>
   </li>
+
+  
 
 
 
@@ -189,9 +175,9 @@ if ($this->session->userdata('id_perfil') == 1) {
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="<?= base_url() ?>index.php/Stock_controller">
-      <i class="fas fa-barcode"></i>
-      <span>Stock</span></a>
+    <a class="nav-link" href="<?=base_url()?>index.php/Stock_controller/tablaStock">
+    <i class="fas fa-barcode"></i>
+      <span>Inventario</span></a>
   </li>
 
 

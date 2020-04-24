@@ -77,8 +77,9 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'Ideat30Md4',
-	'database' => 'nuevo',
+	'password' => 'Ide@t30Md4',
+	'database' => 'negowDB',
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
