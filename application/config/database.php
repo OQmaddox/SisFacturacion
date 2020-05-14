@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'Ide@t30Md4',
-	'database' => 'negowDB',
+	'hostname' => 'bnxdege7aq7q8otevam6-mysql.services.clever-cloud.com',
+	'username' => 'ufzdixsyxekich9v',
+	'password' => 'urdFOEMjvNAC6KZE5fUv',
+	'database' => 'bnxdege7aq7q8otevam6',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
